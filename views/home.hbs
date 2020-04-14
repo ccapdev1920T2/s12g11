@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	
+		<link href="https://fonts.googleapis.com/css?family=Oswald|Source+Sans+Pro&display=swap" rel="stylesheet">
+	
+		<title>DLSU Profs to Pick</title>
+		
+		<link rel="stylesheet" href="css/styleMP.css">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+
+	<body>	
+		{{> navBar}}
+		
+		<div id="about">
+			<h3>About</h3>
+			<p>This website is dedicated to the purpose of students discussing their experiences with professors from DLSU in order to help other students choose a professor that will best suit their needs.</p>
+		</div>
+		
+		<div id="parent">
+			<div class="box">
+				<h3>Latest Reviews</h3>
+				<p>See the latest reviews of your fellow Lasallians</p>
+				<div id="latest">
+					
+					{{#each revEntries}}
+						<div class="revEntry">
+							<div class="revAbt">
+								<img src="images/{{imagePath}}" class="dpIcon" width="40" height="40">
+								<p class="reviewer"><a href="/user/{{reviewer}}">{{reviewer}}</a></p>
+							</div>
+							
+							<div class="revAbt">
+								<p class="reviewee"><a class="toProf" href="/faculty/{{reviewee_u}}">{{reviewee}}</a></p>
+								<p class="revTag">{{revCourse}} ✯{{revStar}}</p>
+							</div>
+							
+							<p class="revDet">{{revDet}}</p>
+						</div>
+					{{/each}}
+					
+				</div>
+			</div>
+			
+			<div class="box">
+				<h3>Top Rated Professors</h3>
+				<p>The best of the best professors!</p>
+				
+				<div id="theOne">
+					<img src="images/{{topImagePath}}" width="200" height="200">
+				</div>
+				
+				{{#each topProfs}}
+					<div class="top"><a href="/faculty/{{fuName}}">{{name}}</a></div>
+				{{/each}}
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function submit(){
+
+				var key = $('#searchBar').children('#searchKey').val();
+
+				window.location = "../result?key=" + key;
+			};
+
+			$('input').on('keydown', function(event) {
+				var x = event.which;
+				if (x === 13) {
+					event.preventDefault();
+				}
+			});
+		</script>
+	</body>
+</html>

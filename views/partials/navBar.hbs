@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<div id="navBar">
+	<p id="header">DLSU PROFS TO PICK</p>
+	<ul>
+		<li><a href="/home" class="{{thisHome}}">Home</a></li>
+		<li><a href="/user/" class="{{thisProfile}}">My Profile</a></li>
+		<li><a href="/view" class="{{thisView}}">View All Profs</a></li>
+		
+		<form id="searchBar" autocomplete="off">
+			<input type="text" name="searchKey" id="searchKey" placeholder="search...">
+		</form>
+		<button onclick="submit()" class="{{thisSearch}}">⌕</button>
+		
+		<li><a href="/logout">Logout</a></li>
+	</ul>
+</div>
