@@ -2,7 +2,7 @@
 This web application is dedicated to the purpose of students discussing their experiences with professors from DLSU in order to help other students choose a professor that will best suit their needs.
 
 ## Contents
----
+
 Each folder and file in this repository is properly documented. You may read the `README.md` file of each folder to understand its content. You may also read the inline comments of each file explaining the statements line-per-line.
 
 - [controllers](https://github.com/ccapdev1920T2/s12g11/tree/master/controllers) - This folder contains files which defines callback functions for client requests.
@@ -13,7 +13,7 @@ Each folder and file in this repository is properly documented. You may read the
 - [index.js](https://github.com/ccapdev1920T2/s12g11/blob/master/index.js) - The main entry point of the web application.
 
 ## Installation
----
+
 1. Clone the repository either by downloading the contents of the repository [here](https://github.com/ccapdev1920T2/s12g11), or using the command below (Note: git should be installed in your system for this to work).
 ```
 git clone https://github.com/ccapdev1920T2/s12g11
@@ -23,7 +23,7 @@ git clone https://github.com/ccapdev1920T2/s12g11
 4. Run the command `npm install` to initialize and install all necessary modules used in the project.
 
 ## Running the Application
----
+
 1. Run the command `node add_data.js` in order to add the dummy data into the database.
 2. We may now run our server. To do this, we run the command `node index.js`. Upon running the command, your Command Prompt should display the following statement:
 ```
@@ -119,13 +119,13 @@ We'll see a page that looks like this:
 Simply click the button "Click here to log back in" to return to the Login page
 
 ## Final Notes
----
+
 > This web application is built such that the user will be redirected to an error page if the user tries to access the pages aside from Login and Signup pages without logging in first.
 
 > Creating a new account assigns a gorgeous default profile picture.
 
 ## Authors
----
+
 >From CCAPDEV S12 Group 11:
 ```
 SILVERIO, Gwyneth Patricia Alysson
