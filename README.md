@@ -115,7 +115,7 @@ http://localhost:3000/user/Jeddy the gouf
 As we can see below, when viewing another user's profile, we would not have the authority to delete or edit their reviews.: 
 ![alt text](scUser.png "User Page")
 
-11. We can now Log out by clicking the "Logout" button in the navigatio bar.
+11. We can now Log out by clicking the "Logout" button in the navigation bar.
 
 We'll see a page that looks like this:
 ![alt text](scLogout.png "User Page")
