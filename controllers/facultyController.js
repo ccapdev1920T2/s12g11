@@ -197,7 +197,7 @@ const facultyController = {
 		db.findMany(Instance, null, {_id:-1}, null, 1, function(i){
 			var uuName = i[0].uuName;
 
-			db.findOne(Review, {reviewer: uuName, revCourse:course}, null, function (result) { 
+			db.findOne(Review, {reviewer: uuName, revCourse: course}, null, function (result) { 
 				res.send(result);
 			});
 		});

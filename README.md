@@ -120,15 +120,17 @@ Simply click the button "Click here to log back in" to return to the Login page
 
 ## Final Notes
 
-> This web application is built such that the user will be redirected to an error page if the user tries to access the pages aside from Login and Signup pages without logging in first.
+- This web application is built such that the user will be redirected to an error page if the user tries to access the pages aside from Login and Signup pages without logging in first.
 
 ![alt text](scError1.png "Error1")
 
-> The user will also be redirected to an error page if the user tries to find a non existing user through the address bar
+- The user will also be redirected to an error page if the user tries to find a non existing user through the address bar
 
 ![alt text](scError2.png "Error2")
 
-> Creating a new account assigns a gorgeous default profile picture.
+- Creating a new account assigns a gorgeous default profile picture.
+
+![alt text](/public/images/default.jpg "Wow")
 
 ## Authors
 
