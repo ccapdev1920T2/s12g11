@@ -25,6 +25,9 @@ git clone https://github.com/ccapdev1920T2/s12g11
 ## Running the Application
 
 1. Run the command `node add_data.js` in order to add the dummy data into the database.
+
+> There might be a problem where add_data.js will not terminate, the user may terminate this in the Command Prompt by pressing ctrl + c
+
 2. We may now run our server. To do this, we run the command `node index.js`. Upon running the command, your Command Prompt should display the following statement:
 ```
 app listening at port 3000
@@ -43,7 +46,7 @@ You should now be seeing the Login page that looks like this:
 You should now be seeing a page that looks like this:
 ![alt text](scSignup.png "Signup Page")
 
->Note that this web application maintains unique accounts through unique usernames, entering a username that has already been registered will flag an error!
+> Note that this web application maintains unique accounts through unique usernames, entering a username that has already been registered will flag an error!
 
 5. Now let's go back to the Login page by clicking the button that says "Already have an account? Log-in". You may Log-in using an account that you have created or you could use the following dummy acounts:
 
