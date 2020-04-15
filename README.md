@@ -128,6 +128,8 @@ Simply click the button "Click here to log back in" to return to the Login page
 
 ![alt text](scError2.png "Error2")
 
+- Professors that have no reviews will be automatically assigned wtih an Overall Rating of 0.0
+
 - Creating a new account assigns a gorgeous default profile picture.
 
 ![alt text](/public/images/default.jpg "Wow")
