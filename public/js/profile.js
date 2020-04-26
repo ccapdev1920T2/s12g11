@@ -44,4 +44,8 @@ $(document).ready(function () {
             $(this).prop('disabled',true);
         }
     });
+
+    $(".revAbt").on('click', '#submit', function () {
+        alert('submitted!');
+    }
 });
