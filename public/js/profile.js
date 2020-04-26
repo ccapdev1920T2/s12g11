@@ -27,7 +27,7 @@ $(document).ready(function () {
         if(confirm('Are you sure you want to edit this review?')){
             $(this).parent().parent().append(
                 "<div class='editDiv'>" +
-                "   <form class='editRev' method='post' autocomplete='off'>" +
+                "   <form class='editRev' autocomplete='off'>" +
 
                 "       <input  type='text'     id='org_reviewer'   name='org_reviewer'     value='" + $(this).siblings('.reviewer').children('a').text() + "' hidden>" +
                 "       <input  type='text'     id='org_reviewee'   name='org_reviewee'     value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.reviewee').text() + "' hidden>" +
@@ -36,16 +36,34 @@ $(document).ready(function () {
 
                 "	    <input  type='text' 	id='review' 	name='review'						value='" + $(this).parent().parent().children('.revDet').text() + "' 	required>" +
                 "       <input  type='text' 	id='course' 	name='course'	maxlength='10' 		value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.course').text() + "' size='10' 		required>" +
-				"	    <input 	type='number'	id='stars' 		name='stars'	min='0' max='5' 	step='0.5' value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.star').text() + "' required>" +
-				"	    <input 	type='submit' 	id='submit'		value='Change'>" +
+				"	    ✯<input 	type='number'	id='stars' 		name='stars'	min='0' max='5' 	step='0.5' value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.star').text() + "' required>" +
+				"	    <input 	type='submit' 	id='submit'		class='forClicks'    value='Change'>" +
                 "   </form>" +
                 "</div>"
             );
+
             $(this).prop('disabled',true);
+
+            $(".editDiv").on('click', '#submit', function(){
+                var reviewer    = $(this).siblings('#org_reviewer').val();
+                var reviewee    = $(this).siblings('#org_reviewee').val();
+                var revCourse   = $(this).siblings('#org_revCourse').val();
+                var revStar     = $(this).siblings('#org_revStar').val();
+                
+                var newRev = $(this).siblings('#review').val();
+                var newCourse = $(this).siblings('#course').val();
+                var newStars = $(this).siblings('#stars').val();
+
+                $.get('/editReview', {reviewer:reviewer, reviewee:reviewee, revCourse:revCourse, revStar:revStar, newRev:newRev, newCourse:newCourse, newStars:newStars}, function(result){
+
+                });
+
+                $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.course').text(newCourse);
+                $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.star').text(newStars);
+                $(this).parent().parent().parent().children('.revDet').text(newRev);
+            });
         }
     });
 
-    $(".revAbt").on('click', '#submit', function () {
-        alert('submitted!');
-    }
 });
+

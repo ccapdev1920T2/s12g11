@@ -40,7 +40,7 @@ app.get('/user/:uuName', userController.getUser);
 
 app.get('/user/', userController.getLoggedUser);
 
-app.post('/user/', userController.editReview);
+app.get('/editReview', userController.editReview);
 
 app.get('/authorityCheck', userController.checkAuthority);
 

@@ -638,11 +638,12 @@ body{
 		display: flex;
 		flex-direction: row;
 		justify-content: flex-start;
-		align-items: flex-end;
+		align-items: center;
 		width: 580px;
 
 		margin: 2px;
-		
+
+		color: #756b64;
 	}
 	
 	#review{

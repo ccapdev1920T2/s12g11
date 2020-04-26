@@ -202,10 +202,10 @@ const userController = {
 	},
 
 	editReview: function(req, res) {
-		var reviewer = req.body.org_reviewer;
-		var reviewee = req.body.org_reviewee;
-		var revCourse = req.body.org_revCourse;
-		var revStar = req.body.org_revStar;
+		var reviewer = req.query.reviewer;
+		var reviewee = req.query.reviewee;
+		var revCourse = req.query.revCourse;
+		var revStar = req.query.revStar;
 	
 		// IMPORTANT NOTE: at this point, for some reason, the deletion of the review happens first so the number of reviews (both total and for the specific subject) is decreased by one
 		var conditions = {reviewer:reviewer, reviewee:reviewee, revCourse:revCourse, revStar:revStar};
@@ -289,9 +289,9 @@ const userController = {
 
 						var u = b.fuName;
 
-						var review = req.body.review;
-						var course = req.body.course;
-						var stars = req.body.stars;
+						var review = req.query.newRev;
+						var course = req.query.newCourse;
+						var stars = req.query.newStars;
 						
 						// checking if the prof already have the subject on his/her record
 						var query10 = {$and: [{fuName: u}, {'subjects.subject': course}]};
