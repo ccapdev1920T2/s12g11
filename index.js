@@ -1,7 +1,10 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const hbs = require('hbs');
 const port = 3000;
+
+var PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.set('view engine', 'hbs');
@@ -22,6 +25,10 @@ app.use(function (req, res) {
 
 db.connect();
 
-app.listen(port, function () {
-    console.log('app listening at port ' + port);
+mongoose.connection.on('connected', () => {
+    console.log('Connected to Atlas!');
+});
+
+app.listen(PORT, function () {
+    console.log('app listening at port ' + PORT);
 });
