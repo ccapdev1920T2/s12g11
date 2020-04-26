@@ -7,6 +7,10 @@ const Review = require('./models/reviewModel.js');
 
 profsToPickDB.connect();
 
+mongoose.connection.on('connected', () => {
+    console.log('Connected to Atlas!');
+});
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> faculties START */
 var faculty = {
 	fuName: "prof0",

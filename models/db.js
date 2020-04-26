@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://localhost:27017/profsToPickDB';
+const url = 'mongodb+srv://Ygg:asd@dlsuprofstopickdb-tf3ts.mongodb.net/test?retryWrites=true&w=majority';
 
 const Faculty = require('./facultyModel.js');
 const User = require('./userModel.js');
