@@ -48,21 +48,36 @@ $(document).ready(function () {
                 var reviewer    = $(this).siblings('#org_reviewer').val();
                 var reviewee    = $(this).siblings('#org_reviewee').val();
                 var revCourse   = $(this).siblings('#org_revCourse').val();
-                var revStar     = $(this).siblings('#org_revStar').val();
+                var revStar     = parseFloat($(this).siblings('#org_revStar').val(), 10);
                 
                 var newRev = $(this).siblings('#review').val();
                 var newCourse = $(this).siblings('#course').val();
-                var newStars = $(this).siblings('#stars').val();
+                var newStars = parseFloat($(this).siblings('#stars').val(), 10);
 
-                $.get('/editReview', {reviewer:reviewer, reviewee:reviewee, revCourse:revCourse, revStar:revStar, newRev:newRev, newCourse:newCourse, newStars:newStars}, function(result){
+				if(newRev!='' && !isNaN(newStars)){
+					$.get('/editReview', {reviewer:reviewer, reviewee:reviewee, revCourse:revCourse, revStar:revStar, newRev:newRev, newCourse:newCourse, newStars:newStars}, function(result){
 
-                });
-
-                $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.course').text(newCourse);
-                $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.star').text(newStars);
-                $(this).parent().parent().parent().children('.revDet').text(newRev);
-				
-				$(this).parent().parent('.editDiv').remove();
+					});
+					$(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.course').text(newCourse);
+					$(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.star').text(newStars);
+					$(this).parent().parent().parent().children('.revDet').text(newRev);
+					
+					$(this).parent().parent('.editDiv').remove();
+					
+					$(this).prop('disabled',false);
+				}
+				else{
+					if(newRev == '')
+						$('#review').css('background-color', 'red');
+					else
+						$('#review').css('background-color', '#756b64');
+					
+					if(isNaN(newStars))
+						$('#stars').css('background-color', 'red');
+					else
+						$('#stars').css('background-color', '#756b64');
+				}
+                
             });
         }
     });
