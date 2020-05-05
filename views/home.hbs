@@ -27,19 +27,7 @@
 				<div id="latest">
 					
 					{{#each revEntries}}
-						<div class="revEntry">
-							<div class="revAbt">
-								<img src="images/{{imagePath}}" class="dpIcon" width="40" height="40">
-								<p class="reviewer"><a href="/user/{{reviewer}}">{{reviewer}}</a></p>
-							</div>
-							
-							<div class="revAbt">
-								<p class="reviewee"><a class="toProf" href="/faculty/{{reviewee_u}}">{{reviewee}}</a></p>
-								<p class="revTag">{{revCourse}} ✯{{revStar}}</p>
-							</div>
-							
-							<p class="revDet">{{revDet}}</p>
-						</div>
+						{{> revEntry imagePath=imagePath reviewer=reviewer reviewee_u=reviewee_u reviewee=reviewee revCourse=revCourse revStar=revStar revDet=revDet}}
 					{{/each}}
 					
 				</div>

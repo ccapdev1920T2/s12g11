@@ -12,11 +12,11 @@ const logoutController = {
                 db.deleteMany(Instance, null, function(y){
                 
                 });
-                console.log(u[0].uuName + ' Successfully Logged Out');
+                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + u[0].uuName + ' Successfully logged out');
                 res.render('logout');
             }
             else{
-				console.log('You are not even logged in');
+				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not even logged in');
 				res.render('error', {extra: "<br>You can't log out if you haven't even logged in yet!"});
 			}
             

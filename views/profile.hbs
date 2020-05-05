@@ -48,21 +48,7 @@
 				<div id="reviewBox">
 					
 					{{#each revEntries}}
-						<div class="revEntry">
-							<div class="revAbt">
-								<img src="../images/{{imagePath}}" class="dpIcon" width="40" height="40">
-								<p class="reviewer"><a href="/user/{{reviewer}}">{{reviewer}}</a></p>
-								<p class="buttonX">Delete</p>
-								<p class="buttonE">Edit</p>
-							</div>
-							
-							<div class="revAbt">
-								<p class="reviewee"><a class="toProf" href="/faculty/{{reviewee_u}}">{{reviewee}}</a></p>
-								<p class="revTag"><b class="course">{{revCourse}}</b> ✯<b class="star">{{revStar}}</b></p>
-							</div>
-							
-							<p class="revDet">{{revDet}}</p>
-						</div>
+						{{> revEntryLogged imagePath=imagePath reviewer=reviewer reviewee_u=reviewee_u reviewee=reviewee revCourse=revCourse revStar=revStar revDet=revDet}}
 					{{/each}}
 					
 				</div>

@@ -27,7 +27,7 @@ var faculty = {
 		{subject:"CCAPDEV", rating: 5.0}
 	],
 }
-profsToPickDB.insertOne(Faculty, faculty);
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
 	fuName: "prof1",
@@ -44,7 +44,7 @@ var faculty = {
 		{subject:"CCDSALG", rating: 4.0}
 	],
 }
-profsToPickDB.insertOne(Faculty, faculty);
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
 	fuName: "prof2",
@@ -61,7 +61,7 @@ var faculty = {
 		{subject:"BUSLAW", rating: 4.0}
 	],
 }
-profsToPickDB.insertOne(Faculty, faculty);
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
 	fuName: "bethlin",
@@ -78,7 +78,7 @@ var faculty = {
 		{subject:"BASMATH", rating: 4.0}
 	],
 }
-profsToPickDB.insertOne(Faculty, faculty);
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
 	fuName: "mactal",
@@ -95,7 +95,7 @@ var faculty = {
 		{subject:"GERPHIS", rating: 1.0}
 	],
 }
-profsToPickDB.insertOne(Faculty, faculty);
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> faculties END */
 
 
@@ -111,7 +111,7 @@ var user = {
 	email: "jedwig_siegfrid_tan@dlsu.edu.ph",
 	course: "BS Computer Science",
 }
-profsToPickDB.insertOne(User, user);
+profsToPickDB.insertOne(User, user, function(flag){});
 
 var user = {
 	uuName: "Ygg",
@@ -124,7 +124,7 @@ var user = {
 	email: "salvador_tan@dlsu.edu.ph",
 	course: "BS Computer Science",
 }
-profsToPickDB.insertOne(User, user);
+profsToPickDB.insertOne(User, user, function(flag){});
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> users END */
 
 
@@ -139,7 +139,7 @@ var review = {
 	revStar:5.0,
 	revDet:"Learned a lot from this prof, gave me a 4.0 for all my hardwork. Get this prof at all costs"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"prof1",
@@ -151,7 +151,7 @@ var review = {
 	revStar:5.0,
 	revDet:"Perfect Teacher! Ez lang requirements kaya di mo na kailangan magDSAL sa end of term"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"prof2",
@@ -163,7 +163,7 @@ var review = {
 	revStar:5.0,
 	revDet:"I CANT BELIV I PASSED THIS SUBJECT!!! LUV U MISS!!!"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"bethlin",
@@ -175,7 +175,7 @@ var review = {
 	revStar:4.5,
 	revDet:"Very lola like, vv caring but at the same time kung matalino class mo GG kasi sasabihin niya 'kaya niyo na yan' sa gitna ng lecture but very fair and understanding na prof. The effort you make = the grade you get."
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"mactal",
@@ -187,7 +187,7 @@ var review = {
 	revStar:0.5,
 	revDet:"He knows his stuff but teaches everything but the subject itself. also very hassle and belittles students. also gave me a death threat"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"prof0",
@@ -199,7 +199,7 @@ var review = {
 	revStar:5.0,
 	revDet:"Very calming teaching style, you'll learn a lot!!"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"prof1",
@@ -211,7 +211,7 @@ var review = {
 	revStar:3.0,
 	revDet:"Very good and considerate teacher pero medyo mahirap nga lang yung mga exams huhu"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"prof2",
@@ -223,7 +223,7 @@ var review = {
 	revStar:3.0,
 	revDet:"Gives really high grades and is very approachable too!!"
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"bethlin",
@@ -235,7 +235,7 @@ var review = {
 	revStar:3.5,
 	revDet:"Her teaching style is not for everyone. Medyo mahirap magets yung topics kapag siya yung nagtuturo pero if you search it up on Youtube magegets mo agad. Grades fairly naman and requirements are not too hard."
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 
 var review = {
 	reviewee_u:"mactal",
@@ -247,5 +247,5 @@ var review = {
 	revStar:1.5,
 	revDet:"Talks nonstop about the Philippine government, hindi ko na alam kung ano talaga yung topic namin lol. On the other hand, madadali lang naman yung mga binibigay na requirements."
 }
-profsToPickDB.insertOne(Review, review);
+profsToPickDB.insertOne(Review, review, function(flag){});
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> reviews END */

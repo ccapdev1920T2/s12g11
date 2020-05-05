@@ -55,6 +55,6 @@ app.get('/faculty/:fuName', facultyController.getFaculty);
 
 app.get('/reviewCheck', facultyController.checkReview);
 
-app.post('/faculty/:fuName', facultyController.postReview);
+app.get('/reviewPost', facultyController.postReview);
 
 module.exports = app;

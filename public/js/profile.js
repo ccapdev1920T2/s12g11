@@ -15,8 +15,8 @@ $(document).ready(function () {
         if(confirm('Are you sure you want to delete this review?')){
             var reviewer = $(this).siblings('.reviewer').children('a').text();
             var reviewee = $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.reviewee').text();
-            var revCourse = $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.course').text();
-            var revStar = $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.star').text(); 
+            var revCourse = $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('.course').text();
+            var revStar = $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('.star').text();
 
             $.get('/deleteReview', {reviewer:reviewer, reviewee:reviewee, revCourse:revCourse, revStar:revStar});
             $(this).closest('.revEntry').remove();
@@ -35,9 +35,9 @@ $(document).ready(function () {
                 "       <input  type='text'     id='org_revStar'    name='org_revStar'      value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.star').text()  + "' hidden>" +
 
                 "	    <input  type='text' 	id='review' 	name='review'						value='" + $(this).parent().parent().children('.revDet').text() + "' 	required>" +
-                "       <input  type='text' 	id='course' 	name='course'	maxlength='10' 		value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.course').text() + "' size='10' 		required>" +
+                "       <input  type='text' 	id='course' 	name='course'	maxlength='10' 		value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.course').text() + "' size='10' disabled>" +
 				"	    ✯<input 	type='number'	id='stars' 		name='stars'	min='0' max='5' 	step='0.5' value='" + $(this).parentsUntil('#reviewBox').children('.revAbt:last').children('.revTag').children('b.star').text() + "' required>" +
-				"	    <input 	type='submit' 	id='submit'		class='forClicks'    value='Change'>" +
+				"	    <input 	type='button' 	id='submit'		class='forClicks'    value='Change'>" +
                 "   </form>" +
                 "</div>"
             );
@@ -61,6 +61,8 @@ $(document).ready(function () {
                 $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.course').text(newCourse);
                 $(this).parent().parent().parent().children('.revAbt:last').children('.revTag').children('.star').text(newStars);
                 $(this).parent().parent().parent().children('.revDet').text(newRev);
+				
+				$(this).parent().parent('.editDiv').remove();
             });
         }
     });

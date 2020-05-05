@@ -21,10 +21,8 @@ const loginController = {
 		db.findOne(User, query1, null, function(x) {
             
             if(x != null){
-                db.insertOne(Instance,{
-                    uuName: u
-                });
-                console.log(u + ' Successfully Logged In');
+                db.insertOne(Instance, {uuName: u}, function(flag){});
+                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + u + ' Successfully Logged In');
 
                 res.redirect('/user/');
             }
