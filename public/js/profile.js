@@ -88,6 +88,10 @@ $(document).ready(function () {
 					event.preventDefault();
 				}
 			});
+			
+			$("[type='number']").keypress(function (evt) {
+				evt.preventDefault();
+			});
         }
     });
 
