@@ -76,6 +76,8 @@ $(document).ready(function () {
 						$('#stars').css('background-color', 'red');
 					else
 						$('#stars').css('background-color', '#756b64');
+					
+					alert('Null inputs for Reviews are not allowed!');
 				}
                 
             });
