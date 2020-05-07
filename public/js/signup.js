@@ -113,7 +113,7 @@ $(document).ready(function () {
                 else {
 					
                     if(field.is($('#uuName')))
-                        $('#uuNameError').text('Username number already exists.');
+                        $('#uuNameError').text('Username already exists.');
 					
                     return callback(false);
                 }
