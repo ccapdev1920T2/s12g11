@@ -10,6 +10,7 @@ const homeController = require('../controllers/homeController.js');
 const signupController = require('../controllers/signupController.js');
 const logoutController = require('../controllers/logoutController.js');
 const resultsController = require('../controllers/resultsController.js');
+const validation = require('../helpers/validation.js');
 
 app.get('/', loginController.getLogin);
 
@@ -22,9 +23,11 @@ app.post('/login', loginController.postLogin);
 
 app.get('/signup', signupController.getSignUp);
 
-app.post('/signup', signupController.postSignUp);
+app.post('/signup', validation.signupValidation(), signupController.postSignUp);
 
-app.get('/signupCheck', signupController.checkUsername);
+app.get('/checkID', signupController.checkID);
+
+app.get('/checkUsername', signupController.checkUsername);
 
 
 

@@ -5,6 +5,10 @@ const Faculty = require('./models/facultyModel.js');
 const User = require('./models/userModel.js');
 const Review = require('./models/reviewModel.js');
 
+const {validationResult} = require('express-validator');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 profsToPickDB.connect();
 
 mongoose.connection.on('connected', () => {
@@ -100,31 +104,37 @@ profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> users START */
-var user = {
-	uuName: "Jeddy the gouf",
-	password: "asd",
-	
-	dpPath: "dp.jpg",
-	
-	name: "Jedwig Siegfrid Tan",
-	id: "11828102",
-	email: "jedwig_siegfrid_tan@dlsu.edu.ph",
-	course: "BS Computer Science",
-}
-profsToPickDB.insertOne(User, user, function(flag){});
 
-var user = {
-	uuName: "Ygg",
-	password: "asd",
+bcrypt.hash('asdfghjk', saltRounds, function(err, hash) {
 	
-	dpPath: "default.jpg",
+	var user = {
+		uuName: "Jeddy the gouf",
+		password: hash,
+		
+		dpPath: "dp.jpg",
+		
+		name: "Jedwig Siegfrid Tan",
+		id: "11828102",
+		email: "jedwig_siegfrid_tan@dlsu.edu.ph",
+		course: "BS Computer Science",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
 	
-	name: "Salvador Tan",
-	id: "118",
-	email: "salvador_tan@dlsu.edu.ph",
-	course: "BS Computer Science",
-}
-profsToPickDB.insertOne(User, user, function(flag){});
+	var user = {
+		uuName: "Ygg",
+		password: hash,
+		
+		dpPath: "default.jpg",
+		
+		name: "Salvador Tan",
+		id: "118",
+		email: "salvador_tan@dlsu.edu.ph",
+		course: "BS Computer Science",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
+	
+});
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> users END */
 
 
@@ -197,7 +207,7 @@ var review = {
 	reviewee:"Arren Matthew C. Antioquia",
 	revCourse:"CCAPDEV",
 	revStar:5.0,
-	revDet:"Very calming teaching style, you'll learn a lot!!"
+	revDet:"Very calming teaching style, you will learn a lot!!"
 }
 profsToPickDB.insertOne(Review, review, function(flag){});
 

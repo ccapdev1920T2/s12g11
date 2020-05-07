@@ -773,6 +773,13 @@ body{
 		font-family: "Source Sans Pro";
 		font-weight: bold;
 	}
+	
+	.error {
+		color: red;
+		font-family: "Source Sans Pro";
+		text-align: center;
+		font-size: small;
+	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> signup.outbox END */
 
 

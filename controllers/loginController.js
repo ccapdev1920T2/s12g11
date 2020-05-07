@@ -3,6 +3,8 @@ const db = require('../models/db.js');
 const User = require('../models/userModel.js');
 const Instance = require('../models/instanceModel.js');
 
+const bcrypt = require('bcrypt');
+
 const loginController = {
 
     getLogin: function (req, res) {
@@ -17,18 +19,22 @@ const loginController = {
         var u = req.body.uuName;
         var p = req.body.password;
 
-        var query1 = {uuName: u, password: p};
+        var query1 = {uuName: u};
 		db.findOne(User, query1, null, function(x) {
             
-            if(x != null){
-                db.insertOne(Instance, {uuName: u}, function(flag){});
-                console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + u + ' Successfully Logged In');
+			bcrypt.compare(p, x.password, function(err, equal) {
+				
+				if(x != null){
+					db.insertOne(Instance, {uuName: u}, function(flag){});
+					console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + u + ' Successfully Logged In');
 
-                res.redirect('/user/');
-            }
-            else{
-                res.render('login');
-            }
+					res.redirect('/user/');
+				}
+				else{
+					res.render('login');
+				}
+				
+			});
 			
         });
     }
