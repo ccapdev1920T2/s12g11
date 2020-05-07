@@ -3,7 +3,6 @@ const db = require('../models/db.js');
 const Faculty = require('../models/facultyModel.js');
 const User = require('../models/userModel.js');
 const Review = require('../models/reviewModel.js');
-const Instance = require('../models/instanceModel.js');
 
 const userController = {
 
@@ -11,94 +10,81 @@ const userController = {
 
 		var u = req.params.uuName;
 
-		db.findMany(Instance, null, {_id:-1}, null, 1, function(i){
-
-			if(i[0] != null){
-				if(i[0].uuName == u){
-					res.redirect('/user/');
-				}
-				else{
-
-					var query1 = {uuName: u};
-					db.findOne(User, query1, null, function(x) {
-						
-						if(x != null){
-							var query2 = {reviewer: u};
-							db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
-								
-								res.render('profile', {
-									uuName: x.uuName,
-					
-									dpPath: x.dpPath,
-
-									name: x.name,
-									id: x.id,
-									email: x.email,
-									course: x.course,
-									
-									revEntries: y
-								});
-							});
-						}
-						else{
-							console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>User not found');
-							res.render('error', {extra: '<br>The User may not exist here'});
-						}
-						
-					});
-
-				}
+		if(req.session.uuName){
+			if(req.session.uuName == u){
+				res.redirect('/user/');
 			}
 			else{
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not logged in');
-				res.render('error', {extra: '<br>Please try logging in.'});
-			}
 
-		});
+				var query1 = {uuName: u};
+				db.findOne(User, query1, null, function(x) {
+					
+					if(x != null){
+						var query2 = {reviewer: u};
+						db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
+							
+							res.render('profile', {
+								uuName: x.uuName,
+				
+								dpPath: x.dpPath,
+
+								name: x.name,
+								id: x.id,
+								email: x.email,
+								course: x.course,
+								
+								revEntries: y
+							});
+						});
+					}
+					else{
+						console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>User not found');
+						res.render('error', {extra: '<br>The User may not exist here'});
+					}
+					
+				});
+
+			}
+		}
+		else{
+			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not logged in');
+			res.render('error', {extra: '<br>Please try logging in.'});
+		}
+		
 	},
 	
 	getLoggedUser: function (req, res) {
+	
+		var query1 = {uuName: req.session.uuName};
+		db.findOne(User, query1, null, function(x){
 
-		db.findMany(Instance, null, {_id:-1}, null, 1, function(u){
-			
-			if(u[0] != null){
-				var query1 = {uuName: u[0].uuName};
-				db.findOne(User, query1, null, function(x){
+			var query2 = {reviewer: req.session.uuName};
+			db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
+				
+				res.render('profile', {
+					thisProfile: "this",
 
-					var query2 = {reviewer: u[0].uuName};
-					db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
-						
-						res.render('profile', {
-							thisProfile: "this",
+					uuName: x.uuName,
+	
+					dpPath: x.dpPath,
 
-							uuName: x.uuName,
-			
-							dpPath: x.dpPath,
-
-							name: x.name,
-							id: x.id,
-							email: x.email,
-							course: x.course,
-							
-							revEntries: y
-						});
-					});
+					name: x.name,
+					id: x.id,
+					email: x.email,
+					course: x.course,
 					
+					revEntries: y
 				});
-			}
-			else{
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not logged in');
-				res.render('error', {extra: '<br>Please try logging in.'});
-			}
+			});
+			
 		});
+		
 	},
-
+	
 	checkAuthority: function (req, res) {
-		var uuName = req.query.uuName;
-
-		db.findOne(Instance, {uuName:uuName}, {uuName:1}, function (result) {
-			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Authority checked');
-			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>' + uuName + ' Currently logged in')
+		
+		db.findOne(User, {uuName:req.session.uuName}, {uuName:1}, function (result) {
+			console.log('authority checked');
 			res.send(result);
 		});
 		
@@ -296,7 +282,7 @@ const userController = {
 
 							db.deleteOne(Review, conditions);
 							
-							db.findMany(Instance, null, {_id:-1}, null, 1, function(funky){
+							db.findMany(User, null, {_id:-1}, null, 1, function(funky){
 								console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>A nice trick');
 								
 								var query1 = {$and: [{fuName: u}, {'subjects.subject': course}]};
@@ -349,14 +335,12 @@ const userController = {
 												console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Resulting oaRating: ✯' + resOaRating);
 
 												// finding the logged user
-												db.findOne(Instance, null, null, function(logged) {
-													db.findOne(User, {uuName:logged.uuName}, null, function(loggedUser) {
-														// adding the review
-														db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
-															
-															//do nothing
+												db.findOne(User, {uuName:req.session.uuName}, null, function(loggedUser) {
+													// adding the review
+													db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
+														
+														//do nothing
 
-														});
 													});
 												});
 
@@ -406,7 +390,7 @@ const userController = {
 
 							db.deleteOne(Review, conditions);
 							
-							db.findMany(Instance, null, {_id:-1}, null, 1, function(funky){
+							db.findMany(User, null, {_id:-1}, null, 1, function(funky){
 								console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>A nice trick');
 							
 								var query1 = {$and: [{fuName: u}, {'subjects.subject': course}]};
@@ -463,14 +447,12 @@ const userController = {
 												console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Resulting ' + course + ' Rating: ✯' + resSubjRating);
 
 												// finding the logged user
-												db.findOne(Instance, null, null, function(logged) {
-													db.findOne(User, {uuName:logged.uuName}, null, function(loggedUser) {
-														// adding the review
-														db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
+												db.findOne(User, {uuName:req.session.uuName}, null, function(loggedUser) {
+													// adding the review
+													db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
 
-															//do nothing
+														//do nothing
 
-														});
 													});
 												});
 

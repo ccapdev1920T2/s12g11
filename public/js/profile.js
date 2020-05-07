@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     var uuName = $('#uuName').text();
-
-    $.get('/authorityCheck', {uuName:uuName}, function (result) {
+	
+	$.get('/authorityCheck', {}, function (result) {
         
         if(result.uuName != uuName){
             $("p.buttonX").hide(0.001);

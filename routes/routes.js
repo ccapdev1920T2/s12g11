@@ -43,9 +43,9 @@ app.get('/user/:uuName', userController.getUser);
 
 app.get('/user/', userController.getLoggedUser);
 
-app.get('/editReview', userController.editReview);
-
 app.get('/authorityCheck', userController.checkAuthority);
+
+app.get('/editReview', userController.editReview);
 
 app.get('/deleteReview', userController.deleteReview);
 

@@ -4,7 +4,6 @@ const url = 'mongodb+srv://Ygg:asd@profstopickdb-tf3ts.mongodb.net/test?retryWri
 const Faculty = require('./facultyModel.js');
 const User = require('./userModel.js');
 const Review = require('./reviewModel.js');
-const Instance = require('./instanceModel.js');
 
 const options = {
     useUnifiedTopology: true,

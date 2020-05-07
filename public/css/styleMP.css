@@ -5,7 +5,7 @@
 
 body{
 	margin: 0px;
-	background-color: #ccedd2;
+	background-color: #222629;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -35,14 +35,14 @@ body{
 		
 		margin: 10px;
 		border-radius: 3px;
-		background-color: #756b64;
+		background-color: #474b4f;
 		
-		box-shadow: 5px 5px grey;
+		box-shadow: 5px 5px #222629;
 	}
 
 	li a{
 		display: block;
-		color: white;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		font-weight: bold;
@@ -51,38 +51,41 @@ body{
 	}
 
 	button{
-		background-color: #756b64;
+		background-color: #474b4f;
 		border: none;
 		border-radius: 2px;
 		margin: 2px;
 		padding: 5px;
 		
-		color: white;
+		color: #61892f;
 		
-		box-shadow: 5px 5px grey;
+		box-shadow: 5px 5px #222629;
 	}
 
 	li a:hover{
-		background-color: white;
+		background-color: #222629;
 		border-radius: 3px;
 		
-		color: #756b64;
+		font-weight: bold;
+		color: #86c232;
 	}
 	
 	.this{
-		background-color: white;
+		background-color: #86c232;
 		border-radius: 2px;
 		
-		color: grey;
+		font-weight: bold;
+		color: #222629;
 		
-		box-shadow: 5px 5px #756b64;
+		box-shadow: 5px 5px #222629;
 	}
 
 	button:hover{
-		background-color: white;
+		background-color: #222629;
 		border-radius: 3px;
 		
-		color: #756b64;
+		font-weight: bold;
+		color: #86c232;
 	}
 
 	#navBar{
@@ -94,10 +97,7 @@ body{
 		align-items: center;
 		
 		padding: 10px;
-		border-bottom-color: #756b64;
-		border-bottom-style: solid;
-		border-bottom-width: 3px;
-		background-color: #94d3ac;
+		background-color: #474b4f;
 		
 		height: 100px;
 		width: 95%;
@@ -105,46 +105,52 @@ body{
 
 	#header{
 		text-align: center;
-		color: #756b64;
+		color: #86c232;
 		font-family: Anders;
 		text-decoration: overline underline;
         font-size : xx-large;
 		margin: 0px;
+		padding: 5px 10px;
 	}
 
 	#searchKey{
-		background-color: #756b64;
+		background-color: #474b4f;
 		border: none;
 		border-radius: 2px;
 		margin: 2px;
 		padding: 5px;
 		
-		color: white;
+		color: #86c232;
 		
-		box-shadow: 5px 5px grey;
+		box-shadow: 5px 5px #222629;
 	}
 
 	#searchB{
-		background-color: #756b64;
+		background-color: #474b4f;
 		border: none;
 		margin: 0px;
 		padding: 1px;
 		width: 30px;
 
-		color: white;
+		color: #86c232;
 
-		box-shadow: 5px 5px grey;
+		box-shadow: 5px 5px #222629;
+	}
+	
+	#navBar form ::placeholder{
+		color: #61892f;
+		opacity: 0.85;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Navigation Bar END */
 
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> home.about START */
 	h3{
-		color: white;
+		color: #86c232;
 		text-align: center;
 		width: 150px;
 		margin: 5px;
-		background-color: #756b64;
+		background-color: #222629;
 		
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
@@ -152,6 +158,8 @@ body{
 	h3 + p{
 		font-weight: bold;
 		padding: 0px 10px;
+		
+		color: #222629;
 	}
 	
 	#about{
@@ -163,10 +171,10 @@ body{
 		margin: 10px;
 		min-height: 100px;
 		width: 70%;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px #756b64;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #474b4f;
 		
-		color: grey;
+		color: #222629;
 		font-family: "Source Sans Pro";
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> home.about END */
@@ -187,7 +195,7 @@ body{
 	}
 	
 	.top p{
-		color: #94d3ac;
+		color: #6b6e70;
 		padding: 2px;
 	}
 	
@@ -195,7 +203,7 @@ body{
 		display: block;
 		padding: 2px;
 		
-		color: white;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		font-weight: bold;
@@ -206,7 +214,7 @@ body{
 		display: block;
 		padding: 5px;
 		
-		color: white;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		font-weight: bold;
@@ -216,12 +224,12 @@ body{
 	.toProf{
 		display: block;
 
-		background-color: #94d3ac;
+		background-color: #222629;
 		margin: 0px 5px;
 		padding: 5px;
 		border-radius: 5px;
 
-		color: #756b64;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		text-decoration: none;
@@ -238,11 +246,11 @@ body{
 		min-height: 400px;
 		width: 400px;
 		
-		background-color: #94d3ac;
-		box-shadow: 5px 5px #756b64;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #474b4f;
 		
 		text-align: center;
-		color: #756b64;
+		color: #474b4f;
 		font-family: "Source Sans Pro";
 	}
 	
@@ -254,9 +262,9 @@ body{
 		width: 95%;
 		min-height: 100px;
 		margin: 5px;
-		background-color: #756b64;
+		background-color: #474b4f;
         
-        box-shadow: 5px 5px grey;
+        box-shadow: 5px 5px #222629;
 	}
 	
 	.revAbt{
@@ -276,28 +284,28 @@ body{
 	}
 	
 	.revTag, .revDet{
-		background-color: #94d3ac;
+		background-color: #222629;
 		margin: 2px 5px;
 		padding: 5px;
 		border-radius: 5px;
-		color: #756b64;
+		color: #61892f;
 	}
 
 	.reviewee, #reviewBox p.reviewee{
-		background-color: #756b64;
+		background-color: #474b4f;
 		margin: 0px;
 		padding: 0px;
 		border-radius: 5px;
-		color: white;
+		color: #61892f;
 	}
 
 	.revDet{
-        background-color: grey;
+        background-color: #222629;
 		border-radius: 5px;
         margin: 5px;
         min-width: 92%;
         max-width: 93%;
-		color: white;
+		color: #61892f;
 	}
 	
 	.dpIcon{
@@ -311,22 +319,22 @@ body{
 		width: 250px;
 		margin-top: 0px;
 		margin-bottom: 10px;		
-		background-color: #756b64;
-		box-shadow: 5px 5px grey;
+		background-color: #474b4f;
+		box-shadow: 5px 5px #222629;
 		font-weight: bold;
 	}
 	
 	.revAbt a:hover{
-		background-color: white;
+		background-color: #86c232;
 		
-		color: #756b64;
+		color: #222629;
 		font-weight: bold;
     }
     
     .top a:hover{
-        background-color: white;
+        background-color: #86c232;
         
-		color: #756b64;
+		color: #222629;
     }
     
     p.reviewer a:hover{
@@ -350,7 +358,7 @@ body{
 		padding-bottom: 5px;
 		min-width: 400px;
 		min-height: 200px;
-        background-color: #94d3ac;
+        background-color: #6b6e70;
 	}
 	
 	#theOne {
@@ -359,11 +367,11 @@ body{
 		margin-top: 10px;
 		margin-bottom: 0px;
 		padding-top: 10px;
-		background-color: #756b64;
+		background-color: #474b4f;
 		
 		font-weight: bold;
 		
-		box-shadow: 5px 5px grey;
+		box-shadow: 5px 5px #222629;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> home.parent END */
 
@@ -375,16 +383,16 @@ body{
 		
 		text-align: justify;
 		
-		color: white;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 	}
 	
 	#content h3{
 		width: 150px;
 		margin: 15px 0px;
-		background-color: #756b64;
+		background-color: #222629;
 		
-		color: white;
+		color: #86c232;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		
@@ -392,7 +400,7 @@ body{
     }
     
     #reviewBox .revTag{
-        color: #756b64;
+        color: #61892f;
     }
 	
 	.detailDiv{
@@ -407,33 +415,39 @@ body{
 		justify-content: flex-start;
 		align-items: center;
 		
-		background-color: #756b64;
+		background-color: #222629;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	}
 	
-	.label{
+	#content .label{
 		padding-right: 0px;
+		
+		color: #86c232;
 		font-weight: bold;
 	}
 
-	.buttonX{
-		padding: 3px;
+	#content .buttonX{
+		padding: 3px 10px;
 		margin: 0px 1px;
 		border-radius: 10px;
-		border-color: darkgrey;
+		border-color: #222629;
 		border-width: 2px;
 		border-style: solid;
-		background-color: #756b64;
+		background-color: #474b4f;
+		
+		color: #222629;
 	}
 
-	.buttonE{
-		padding: 3px;
+	#content .buttonE{
+		padding: 3px 10px;
 		margin: 0px 1px;
 		border-radius: 10px;
-		border-color: darkgrey;
+		border-color: #222629;
 		border-width: 2px;
 		border-style: solid;
-		background-color: #756b64;
+		background-color: #474b4f;
+		
+		color: #222629;
 	}
 
 	#content{
@@ -451,8 +465,8 @@ body{
 		margin: 5px;
 		min-width: 600px;
 		min-height: 200px;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px grey;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #222629;
 	}
 	
 	#picture{
@@ -473,7 +487,7 @@ body{
 		
 		width: 330px;
 		min-height: 200px;
-		color: white;
+		color: #61892f;
 	}
 	
 	#reviews{
@@ -487,8 +501,8 @@ body{
 		padding-bottom: 5px;
 		min-width: 600px;
 		min-height: 500px;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px grey;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #222629;
 	}
 	
 	#reviewBox{
@@ -509,30 +523,32 @@ body{
 		max-width: 97%;
 		padding: 3px;
 		margin:5px;
-		border-color: darkgrey;
-		background-color: orange;
+		border-color: #222629;
+		background-color: #ffc031;
 	}
 
 	.editRev{
 		max-width: 95%;
 	}
 
-	.buttonX:hover{
-		background-color: red;
-		border-color: darkgrey;
-		color: grey;
+	#content .buttonX:hover{
+		background-color: #dd0000;
+		border-color: #222629;
+		font-weight: bold;
+		color: #222629;
 	}
 	
-	.buttonE:hover{
-		background-color: orange;
-		border-color: darkgrey;
-		color: grey;
+	#content .buttonE:hover{
+		background-color: #ffc031;
+		border-color: #222629;
+		font-weight: bold;
+		color: #222629;
 	}
 
 	.cancelEdit:hover{
-		background-color: red;
-		border-color: darkgrey;
-		color: grey;
+		background-color: #dd0000;
+		border-color: #222629;
+		color: #222629;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> profile.content END */
 
@@ -542,9 +558,10 @@ body{
 		padding: 5px;
         border-radius: 2px;
         width: 300px;
-        background-color: white;
+        background-color: #86c232;
 
-        color: #756b64;
+		font-weight: bold;
+        color: #222629;
 	}
 	
 	.profs li{
@@ -566,8 +583,8 @@ body{
 		
 		padding: 10px;
 		margin: 10px;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px #756b64;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #474b4f;
 		
 		min-height: 200px;
 		width: 500px;
@@ -603,8 +620,8 @@ body{
 		align-items: center;
 		margin-top: 20px;
 		padding: 10px;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px #756b64;
+		background-color: #6b6e70;
+		box-shadow: 5px 5px #474b4f;
 		
 		height: 70%;
 		width: 50%;
@@ -625,13 +642,13 @@ body{
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> faculty.reviews START */
 	#reviews input, textarea{
-		border-color: #756b64 ;
+		border-color: #474b4f ;
 		border-style: solid; 
-		background-color: #756b64;
+		background-color: #474b4f;
 		margin: 2px;
 		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 		
-		color: white; 
+		color: #61892f; 
 	}
 	
 	#reviews form{
@@ -643,7 +660,7 @@ body{
 
 		margin: 2px;
 
-		color: #756b64;
+		color: #474b4f;
 	}
 	
 	#review{
@@ -658,6 +675,9 @@ body{
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		
+		border-color: #86c232;
+		border-style: solid;
 	}
 	
 	div > form{
@@ -671,18 +691,18 @@ body{
 	#outBox legend{
 		margin: 5px;
 		font-family: "Source Sans Pro";
-		color: #756b64;
+		color: #86c232;
 	}
 	
 	#outBox input{
-		background-color: #756b64;
+		background-color: #6b6e70;;
 		border-radius: 30px;
 		border-width: 2px;
-		border-color: #94d3ac;
+		border-color: #474b4f;
 		border-style: solid;
 		padding: 2px 10px;
 		
-		color: #94d3ac;
+		color: #86c232;
 		font-size: 15px;
 	}
 	
@@ -694,26 +714,26 @@ body{
 		margin: 5px;
 		width: 90%;
 		height: 2px;
-		background-color: #756b64;
+		background-color: #6b6e70;
 	}
 	
 	.button{
 		padding: 2px;
 		width: 230px;
-		background-color: #756b64;
+		background-color: #6b6e70;
 		
-		color: #94d3ac;
+		color: #474b4f;
 		text-align: center;
 		text-decoration: none;
 		font-family: "Source Sans Pro";
 		font-size: 15px;
-		font-weight: bold
+		font-weight: bold;
 	}
 	
 	form .button{
 		width: 100px;
 		border-radius: 30px;
-		border-color: #94d3ac;
+		border-color: #474b4f;
 		margin: 5px;
 	}
 	
@@ -724,8 +744,8 @@ body{
 		align-items: center;
 		
 		padding: 10px;
-		background-color: #94d3ac;
-		box-shadow: 5px 5px #756b64;
+		background-color: #474b4f;
+		box-shadow: 5px 5px #6b6e70;
 		
 		height: 70%;
 		width: 50%;
@@ -733,7 +753,7 @@ body{
 	
 	#outBox #header{
 		text-align: center;
-		color: #756b64;
+		color: #86c232;
 		font-family: Anders;
 		text-decoration: overline underline;
 		font-size : xxx-large;
@@ -741,41 +761,45 @@ body{
 	}
 
 	#error{
-		margin: -5px 0px 5px 0px;
+		margin: 3px 0px -2px 0px;
+		padding: 3px 7px;
+		background-color: #222629;
 
 		text-align: center;
-		color: red;
+		color: #dd0000;
 		font-family: "Source Sans Pro";
-		font-weight: bold;
 	}
 	
 	.button:hover{
-		background-color: #94d3ac;
-		border-color: #756b64;
+		background-color: #474b4f;
+		border-color: #86c232;
 		border-width: 2px;
 		border-style: solid;
 		
-		color: #756b64;
+		color: #86c232;
 	}
 	
 	fieldset ::placeholder, form ::placeholder{
-		color: white;
+		color: #474b4f;
 		opacity: 0.85;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> login.outbox END */
 	
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> signup.outbox START */
 	#success{
-		margin: -5px 0px 5px 0px;
+		margin: 3px 0px -2px 0px;
+		padding: 3px 7px;
+		background-color: #222629;
+		border-radius: 5px;
 
 		text-align: center;
-		color: green;
+		color: #61892f;
 		font-family: "Source Sans Pro";
 		font-weight: bold;
 	}
 	
 	.error {
-		color: red;
+		color: #dd0000;
 		font-family: "Source Sans Pro";
 		text-align: center;
 		font-size: small;
@@ -787,12 +811,12 @@ body{
 	#prompt{
 		margin: 20px;
 		font-family: "Source Sans Pro";
-		color: grey;
+		color: #222629;
 	}
 	#prompt2{
 		margin: 20px;
 		font-family: "Source Sans Pro";
-		color: grey;
+		color: #222629;
 		font-size : xxx-large;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> logout.outbox END */
@@ -808,10 +832,10 @@ body{
 	}
 
 	::-webkit-scrollbar-thumb {
-	  background: #756b64;
+	  background: #474b4f;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
-	  background: #94d3ac;
+	  background: #6b6e70;
 	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Miscellaneous END */

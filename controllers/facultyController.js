@@ -2,60 +2,55 @@ const db = require('../models/db.js');
 
 const Faculty = require('../models/facultyModel.js');
 const Review = require('../models/reviewModel.js');
-const Instance = require('../models/instanceModel.js');
 const User = require('../models/userModel.js');
 
 const facultyController = {
 
     getFaculty: function (req, res) {
 		
-		db.findMany(Instance, null, {_id:-1}, null, 1, function(i){
-
-			if(i[0] != null){
-				var u = req.params.fuName;
+		if(req.session.uuName){
+			var u = req.params.fuName;
+			
+			var query1 = {fuName: u};
+			db.findOne(Faculty, query1, null, function(x) {
 				
-				var query1 = {fuName: u};
-				db.findOne(Faculty, query1, null, function(x) {
-					
-					if(x != null){
-						var query2 = {reviewee_u: u};
-						db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
+				if(x != null){
+					var query2 = {reviewee_u: u};
+					db.findMany(Review, query2, {_id:-1}, null, 0, function(y){
+						
+						res.render('faculty', {
+							fuName: x.fuName,
+			
+							dpPath: x.dpPath,
+
+							name: x.name,
+							email: x.email,
+							college: x.college,
+							department: x.department,
+							oaRating: x.oaRating.toFixed(2),
 							
-							res.render('faculty', {
-								fuName: x.fuName,
+							subjects: x.subjects,
+							
+							revEntries: y
+
+							
+						});
+						
+					});
+
+					console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>View Faculty: ' + x.name);
+				}
+				else{
+					console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Faculty not found');
+					res.render('error');
+				}
 				
-								dpPath: x.dpPath,
-
-								name: x.name,
-								email: x.email,
-								college: x.college,
-								department: x.department,
-								oaRating: x.oaRating.toFixed(2),
-								
-								subjects: x.subjects,
-								
-								revEntries: y
-
-								
-							});
-							
-                        });
-
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>View Faculty: ' + x.name);
-					}
-					else{
-						console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Faculty not found');
-						res.render('error');
-					}
-					
-				});
-			}
-			else{
-				console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not logged in');
-				res.render('error', {extra: '<br>Please try logging in.'});
-			}
-
-		});
+			});
+		}
+		else{
+			console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>You are not logged in');
+			res.render('error', {extra: '<br>Please try logging in.'});
+		}
 		
 	},
 
@@ -121,16 +116,14 @@ const facultyController = {
 						console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Resulting ' + course + ' Rating: ✯' + resSubjRating);
 
 						// finding the logged user
-						db.findOne(Instance, null, null, function(logged) {
-							db.findOne(User, {uuName:logged.uuName}, null, function(loggedUser) {
-								// adding the review
-								db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
+						db.findOne(User, {uuName:req.session.uuName}, null, function(loggedUser) {
+							// adding the review
+							db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
 
-									res.render('partials/revEntryCreated', {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review, isNew:false, resOaRating:resOaRating, resSubjRating:resSubjRating}, function (err, html){
-										res.send(html);
-									});
-
+								res.render('partials/revEntryCreated', {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:x.name, revCourse:course, revStar:stars, revDet:review, isNew:false, resOaRating:resOaRating, resSubjRating:resSubjRating}, function (err, html){
+									res.send(html);
 								});
+
 							});
 						});
 
@@ -180,15 +173,13 @@ const facultyController = {
 						console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Resulting oaRating: ✯' + resOaRating);
 
 						// finding the logged user
-						db.findOne(Instance, null, null, function(logged) {
-							db.findOne(User, {uuName:logged.uuName}, null, function(loggedUser) {
-								// adding the review
-								db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
-									res.render('partials/revEntryCreated', {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review, isNew:true, resOaRating:resOaRating, resSubjRating:stars}, function(err, html) {
-										res.send(html);
-									});
-
+						db.findOne(User, {uuName:req.session.uuName}, null, function(loggedUser) {
+							// adding the review
+							db.insertOne(Review, {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review}, function(flag) {
+								res.render('partials/revEntryCreated', {reviewee_u:u, imagePath:loggedUser.dpPath, reviewer:loggedUser.uuName, reviewee:prof.name, revCourse:course, revStar:stars, revDet:review, isNew:true, resOaRating:resOaRating, resSubjRating:stars}, function(err, html) {
+									res.send(html);
 								});
+
 							});
 						});
 
@@ -202,13 +193,10 @@ const facultyController = {
 
 	checkReview: function (req, res) {
 		var course = req.query.course;
+		var uuName = req.session.uuName;
 
-		db.findMany(Instance, null, {_id:-1}, null, 1, function(i){
-			var uuName = i[0].uuName;
-
-			db.findOne(Review, {reviewer: uuName, revCourse: course}, null, function (result) { 
-				res.send(result);
-			});
+		db.findOne(Review, {reviewer: uuName, revCourse: course}, null, function (result) { 
+			res.send(result);
 		});
 	}
 }
