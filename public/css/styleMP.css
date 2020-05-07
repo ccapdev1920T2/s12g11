@@ -666,6 +666,11 @@ body{
 	#review{
 		flex-grow: 2;
 	}
+	
+	#reviews form ::placeholder{
+		color: #61892f;
+		opacity: 0.85;
+	}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> faculty.reviews END */
 
 
