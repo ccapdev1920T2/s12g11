@@ -5,8 +5,8 @@ $(document).ready(function () {
 	$.get('/authorityCheck', {}, function (result) {
         
         if(result.uuName != uuName){
-            $("p.buttonX").hide(0.001);
-            $("p.buttonE").hide(0.001);
+            $("p.buttonX").hide(0.001);	$("p.buttonX").prop('disabled', true);
+            $("p.buttonE").hide(0.001);	$("p.buttonE").prop('disabled', true);
         }
 
     });
