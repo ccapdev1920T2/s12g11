@@ -100,6 +100,227 @@ var faculty = {
 	],
 }
 profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "unissechua",
+	
+	dpPath: "Unisse.jpg",
+
+	name: "Unisse Chua",
+	email: "Unisse.Chua@dlsu.edu.ph",
+	college: "College of Computer Studies",
+	department: "Computer Technology",
+	oaRating: 5,
+	
+	subjects:[
+		{subject:"CCAPDEV", rating:5.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "florantesalvador",
+	
+	dpPath: "Salvador.jpg",
+
+	name: "Florante Salvador",
+	email: "florante.salvador@dlsu.edu.ph",
+	college: "College of Computer Studies",
+	department: "Computer Technology",
+	oaRating: 4.5,
+	
+	subjects:[
+		{subject:"CCPROG2", rating:4.5 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "vergelbungay",
+	
+	dpPath: "vergel.jpg",
+
+	name: "Vergel Bungay",
+	email: "Vergel.Bungay@dlsu.edu.ph",
+	college: "College of Engineering",
+	department: "Math Department",
+	oaRating: 4.0,
+	
+	subjects:[
+		{subject:"CALENG1", rating:4.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "ronaldpascual",
+	
+	dpPath: "ronald.jpg",
+
+	name: "Ronald Pascual",
+	email: "ronald.pascual@dlsu.edu.ph",
+	college: "College of Computer Studies",
+	department: "Computer Technology",
+	oaRating: 3.5,
+	
+	subjects:[
+		{subject:"CSARCH1", rating:3.5 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "noelledelacruz",
+	
+	dpPath: "noelle.jpg",
+
+	name: "Noelle Dela Cruz",
+	email: "Noelle.Delacruz@dlsu.edu.ph",
+	college: "College of Liberal Arts",
+	department: "Philosopy department",
+	oaRating: 4.5,
+	
+	subjects:[
+		{subject:"GEETHIC", rating:4.5 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "jenniferureta",
+	
+	dpPath: "jennifer.jpg",
+
+	name: "Jennifer Ureta",
+	email: "Jennifer.ureta@dlsu.edu.ph",
+	college: "College of Computer Studies",
+	department: "Computer Technology",
+	oaRating: "2.0",
+	
+	subjects:[
+		{subject:"CCPROG1", rating:2.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "tessielimoanco",
+	
+	dpPath: "teresita.jpg",
+
+	name: "Teresita Limoanco",
+	email: "teresita.limoanco@dlsu.edu.ph",
+	college: "College of Computer Studies",
+	department: "Computer Technology",
+	oaRating: 4.5,
+	
+	subjects:[
+		{subject:"CSALGCM", rating:4.5 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "ArleneInocencio",
+	
+	dpPath: "arlene.jpg",
+
+	name: "Arlene Inocencio",
+	email: "Arlene.Inocencio@dlsu.edu.ph",
+	college: "Brother Andrew Gonzales College of Education",
+	department: "Economics Department",
+	oaRating: 5.0,
+	
+	subjects:[
+		{subject:"MATECO1", rating:5.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "gerardojanairo",
+	
+	dpPath: "janairo.jpg",
+
+	name: "Gerardo C. Janairo",
+	email: "Gerardo.Janairo@dlsu.edu.ph",
+	college: "College of Engineering",
+	department: "Chemistry Department",
+	oaRating: 4.0,
+	
+	subjects:[
+		{subject:"KEMORG1", rating:4.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "arlenepascasio",
+	
+	dpPath: "Pascasio.jpg",
+
+	name: "Arlene Pascasio",
+	email: "Arlene.Pascasio@dlsu.edu.ph",
+	college: "College of Engineering",
+	department: "Chemistry Department",
+	oaRating: 4.5,
+	
+	subjects:[
+		{subject:"KEMATH1", rating:4.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "leonorruivivar",
+	
+	dpPath: "leonor.jpg",
+
+	name: "Leonor Ruivivar",
+	email: "Leonor.Ruivivar@dlsu.edu.ph",
+	college: "School of Economics",
+	department: "Math Department",
+	oaRating: 2.0,
+	
+	subjects:[
+		{subject:"MTH124A", rating:2.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "easteregg",
+	
+	dpPath: "easterEgg.jpg",
+
+	name: "Thrall,son of Durotan",
+	email: "Orcish.Horde@gmail.com",
+	college: "THE HORDE",
+	department: "Orcish Hordes",
+	oaRating: 5.0,
+	
+	subjects:[
+		{subject:"ORCLEC1", rating:5.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
+
+var faculty = {
+	fuName: "frumencioco",
+	
+	dpPath: "co.jpg",
+
+	name: "Frumencio Co",
+	email: "Frumencio.Co@dlsu.edu.ph",
+	college: "School of Economics",
+	department: "Math Department",
+	oaRating: 5.0,
+	
+	subjects:[
+		{subject:"STT151A", rating:5.0 }
+	],
+}
+profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> faculties END */
 
 
@@ -127,9 +348,61 @@ bcrypt.hash('asdfghjk', saltRounds, function(err, hash) {
 		dpPath: "default.jpg",
 		
 		name: "Salvador Tan",
-		id: "118",
+		id: "11800000",
 		email: "salvador_tan@dlsu.edu.ph",
 		course: "BS Computer Science",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
+	
+	var user = {
+		uuName: "silverioalysson",
+		password: hash,
+		
+		dpPath: "default.jpg",
+		
+		name: "Alysson Silverio",
+		id: "11823432",
+		email: "gwyneth__silverio@dlsu.edu.ph",
+		course: "BS Computer Science",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
+	
+	var user = {
+		uuName: "UNLiWINGS",
+		password: hash,
+		
+		dpPath: "wings.jpg",
+		
+		name: "Geryco Dionisio",
+		id: "11823881",
+		email: "Geryco_Dionisio@dlsu.edu.ph",
+		course: "AB Psychology",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
+
+	var user = {
+		uuName: "Barley",
+		password: hash,
+		
+		dpPath: "onward.jpg",
+		
+		name: "Drake Mackentire",
+		id: "11678973",
+		email: ":'Drake_Mackentire@dlsu.edu.ph",
+		course: "CIV-ENG",
+	}
+	profsToPickDB.insertOne(User, user, function(flag){});
+
+	var user = {
+		uuName: "Whosyourdaddy",
+		password: hash,
+		
+		dpPath: "karma.jpg",
+		
+		name: "Kenzman Liu",
+		id: "118342342",
+		email: "Kenzo_Liu@dlsu.edu.ph",
+		course: "CHEM-ENG",
 	}
 	profsToPickDB.insertOne(User, user, function(flag){});
 	
@@ -258,4 +531,65 @@ var review = {
 	revDet:"Talks nonstop about the Philippine government, hindi ko na alam kung ano talaga yung topic namin lol. On the other hand, madadali lang naman yung mga binibigay na requirements."
 }
 profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"arlenepascasio",
+	
+	imagePath:"karma.jpg",
+	reviewer:"Whosyourdaddy",
+	reviewee:"Arlene Pascasio",
+	revCourse: "KEMATH1",
+	revStar:4.5,
+	revDet:"FUN AND ENGAGING PROF! one of the best there is!",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"vergelbungay",
+	
+	imagePath:"karma.jpg",
+	reviewer:"Whosyourdaddy",
+	reviewee:"Vergel Bungay",
+	revCourse: "CALENG1",
+	revStar:4.5,
+	revDet:"solid netong prof super, korean speaking pa siya noice!",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"leonorruivivar",
+	
+	imagePath:"karma.jpg",
+	reviewer:"Whosyourdaddy",
+	reviewee:"Leonor Ruivivar",
+	revCourse: "MTH124A",
+	revStar:2.5,
+	revDet:"Mukhang hindi mabait sa mga estudyante niya, might be wrong tho",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"vergelbungay",
+	
+	imagePath:"wings.jpg",
+	reviewer:"UNLiWINGS",
+	reviewee:"Vergel Bungay",
+	revCourse: "CALENG1",
+	revStar:4.5,
+	revDet:"masaya siya maging prof!",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"leonorruivivar",
+	
+	imagePath:"wings.jpg",
+	reviewer:"UNLiWINGS",
+	reviewee:"Leonor Ruivivar",
+	revCourse: "MTH124A",
+	revStar:2.0,
+	revDet:"Sakto lang naman, you get something i guess",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> reviews END */
