@@ -6,11 +6,18 @@ This web application is dedicated to the purpose of students discussing their ex
 Each folder and file in this repository is properly documented. You may read the `README.md` file of each folder to understand its content. You may also read the inline comments of each file explaining the statements line-per-line.
 
 - [controllers](https://github.com/ccapdev1920T2/s12g11/tree/master/controllers) - This folder contains files which defines callback functions for client requests.
+- [helpers] (https://github.com/ccapdev1920T2/s12g11/tree/master/helpers) - This folder contains files which is used for information checking and validation
 - [models](https://github.com/ccapdev1920T2/s12g11/tree/master/models) - This folder contains files for database modeling and access.
 - [public](https://github.com/ccapdev1920T2/s12g11/tree/master/public) - This folder contains static assets such as css, js, and image files.
 - [routes](https://github.com/ccapdev1920T2/s12g11/tree/master/routes) - This folder contains files which describes the response of the server for each HTTP method request to a specific path in the server.
 - [views](https://github.com/ccapdev1920T2/s12g11/tree/master/views) - This folder contains all hbs files to be rendered when requested from the server.
 - [index.js](https://github.com/ccapdev1920T2/s12g11/blob/master/index.js) - The main entry point of the web application.
+
+
+## Published Application link
+
+- https://dlsu-profs-to-pick.herokuapp.com/
+
 
 ## Installation
 
