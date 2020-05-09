@@ -102,40 +102,6 @@ var faculty = {
 profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
-	fuName: "unissechua",
-	
-	dpPath: "Unisse.jpg",
-
-	name: "Unisse Chua",
-	email: "Unisse.Chua@dlsu.edu.ph",
-	college: "College of Computer Studies",
-	department: "Computer Technology",
-	oaRating: 5,
-	
-	subjects:[
-		{subject:"CCAPDEV", rating:5.0 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
-	fuName: "florantesalvador",
-	
-	dpPath: "Salvador.jpg",
-
-	name: "Florante Salvador",
-	email: "florante.salvador@dlsu.edu.ph",
-	college: "College of Computer Studies",
-	department: "Computer Technology",
-	oaRating: 4.5,
-	
-	subjects:[
-		{subject:"CCPROG2", rating:4.5 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
 	fuName: "vergelbungay",
 	
 	dpPath: "vergel.jpg",
@@ -153,23 +119,6 @@ var faculty = {
 profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
-	fuName: "ronaldpascual",
-	
-	dpPath: "ronald.jpg",
-
-	name: "Ronald Pascual",
-	email: "ronald.pascual@dlsu.edu.ph",
-	college: "College of Computer Studies",
-	department: "Computer Technology",
-	oaRating: 3.5,
-	
-	subjects:[
-		{subject:"CSARCH1", rating:3.5 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
 	fuName: "noelledelacruz",
 	
 	dpPath: "noelle.jpg",
@@ -182,40 +131,6 @@ var faculty = {
 	
 	subjects:[
 		{subject:"GEETHIC", rating:4.5 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
-	fuName: "jenniferureta",
-	
-	dpPath: "jennifer.jpg",
-
-	name: "Jennifer Ureta",
-	email: "Jennifer.ureta@dlsu.edu.ph",
-	college: "College of Computer Studies",
-	department: "Computer Technology",
-	oaRating: "2.0",
-	
-	subjects:[
-		{subject:"CCPROG1", rating:2.0 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
-	fuName: "tessielimoanco",
-	
-	dpPath: "teresita.jpg",
-
-	name: "Teresita Limoanco",
-	email: "teresita.limoanco@dlsu.edu.ph",
-	college: "College of Computer Studies",
-	department: "Computer Technology",
-	oaRating: 4.5,
-	
-	subjects:[
-		{subject:"CSALGCM", rating:4.5 }
 	],
 }
 profsToPickDB.insertOne(Faculty, faculty, function(flag){});
