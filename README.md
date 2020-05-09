@@ -13,6 +13,12 @@ Each folder and file in this repository is properly documented. You may read the
 - [views](https://github.com/ccapdev1920T2/s12g11/tree/master/views) - This folder contains all hbs files to be rendered when requested from the server.
 - [index.js](https://github.com/ccapdev1920T2/s12g11/blob/master/index.js) - The main entry point of the web application.
 
+
+## Published Application link
+
+- https://dlsu-profs-to-pick.herokuapp.com/
+
+
 ## Installation
 
 1. Clone the repository either by downloading the contents of the repository [here](https://github.com/ccapdev1920T2/s12g11), or using the command below (Note: git should be installed in your system for this to work).
