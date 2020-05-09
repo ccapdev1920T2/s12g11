@@ -108,7 +108,7 @@ In the profile page we see the details of the user as well as the user's reviews
 Here is what it looks like when editing a review:
 ![alt text](scEdit.png "Edit Example")
 
-> Note that when editing, the user is allowed to change the body, course code and rating of the review but keep in mind that the professor being reviewed remains as is!
+> Note that when editing, the user is allowed to change the body and rating of the review but keep in mind that the professor being reviewed remains as is!
 
 10. Now of course we are also curious of other users and we would also want to view their profiles and reviews. There are also a number of ways to do this.
 
@@ -127,6 +127,11 @@ As we can see below, when viewing another user's profile, we would not have the 
 We'll see a page that looks like this:
 ![alt text](scLogout.png "User Page")
 Simply click the button "Click here to log back in" to return to the Login page
+
+```
+You can also find our web application deployed in Heroku at:
+https://dlsu-profs-to-pick.herokuapp.com/
+```
 
 ## Final Notes
 
