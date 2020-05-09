@@ -128,11 +128,6 @@ We'll see a page that looks like this:
 ![alt text](scLogout.png "User Page")
 Simply click the button "Click here to log back in" to return to the Login page
 
-```
-You can also find our web application deployed in Heroku at:
-https://dlsu-profs-to-pick.herokuapp.com/
-```
-
 ## Final Notes
 
 - This web application is built such that the user will be redirected to an error page if the user tries to access the pages aside from Login and Signup pages without logging in first.
