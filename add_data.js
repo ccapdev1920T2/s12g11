@@ -153,23 +153,6 @@ var faculty = {
 profsToPickDB.insertOne(Faculty, faculty, function(flag){});
 
 var faculty = {
-	fuName: "gerardojanairo",
-	
-	dpPath: "janairo.jpg",
-
-	name: "Gerardo C. Janairo",
-	email: "Gerardo.Janairo@dlsu.edu.ph",
-	college: "College of Engineering",
-	department: "Chemistry Department",
-	oaRating: 4.0,
-	
-	subjects:[
-		{subject:"KEMORG1", rating:4.0 }
-	],
-}
-profsToPickDB.insertOne(Faculty, faculty, function(flag){});
-
-var faculty = {
 	fuName: "arlenepascasio",
 	
 	dpPath: "Pascasio.jpg",
@@ -504,6 +487,42 @@ var review = {
 	revCourse: "MTH124A",
 	revStar:2.0,
 	revDet:"Sakto lang naman, you get something i guess",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"ArleneInocencio",
+	
+	imagePath:"wings.jpg",
+	reviewer:"UNLiWINGS",
+	reviewee:"Arlene Inocencio",
+	revCourse: "MATECO1",
+	revStar:5.0,
+	revDet:"Cool prof, would take again",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"frumencioco",
+	
+	imagePath:"default.jpg",
+	reviewer:"silverioalysson",
+	reviewee:"Frumencio Co",
+	revCourse: "STT1g1A",
+	revStar:5.0,
+	revDet:"Learned a lot from this prof!",
+}
+profsToPickDB.insertOne(Review, review, function(flag){});
+
+var review = {
+	reviewee_u:"noelledelacruz",
+	
+	imagePath:"default.jpg",
+	reviewer:"silverioalysson",
+	reviewee:"Noelle Dela Cruz",
+	revCourse: "GEETHIC",
+	revStar:4.5,
+	revDet:"Recommend her, you get what you deserve",
 }
 profsToPickDB.insertOne(Review, review, function(flag){});
 
